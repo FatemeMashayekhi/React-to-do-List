@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
-export default function AddInput() {
+import { useState } from "react";
+export default function AddInput({ setTasks }) {
+  const [inputValue, setInputValue] = useState("");
   return (
     <>
       <div className="w-52 relative">
@@ -8,11 +11,28 @@ export default function AddInput() {
           id="add"
           placeholder="Add Todo Here"
           className="p-2"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
-        <Icon
-          icon="ph:plus-fill"
-          className="absolute right-5 top-1 size-8 text-[#fa7a46]"
-        />
+        <button
+          onClick={() =>
+            setTasks((prevState) => {
+              return [
+                ...prevState,
+                {
+                  name: inputValue,
+                  is_Done: false,
+                  id: +new Date(),
+                },
+              ];
+            })
+          }
+        >
+          <Icon
+            icon="ph:plus-fill"
+            className="absolute right-5 top-1 size-8 text-[#fa7a46]"
+          />
+        </button>
       </div>
     </>
   );
