@@ -2,9 +2,9 @@ import Header from "./Header/Header";
 
 export default function MainTasks() {
   return (
-    <>
-      <p>Tasks</p>
+    <div className="bg-[#1b99e5] flex flex-col justify-center items-center gap-y-4">
+      <p className="font-semibold text-2xl text-white">Tasks</p>
       <Header />
-    </>
+    </div>
   );
 }
