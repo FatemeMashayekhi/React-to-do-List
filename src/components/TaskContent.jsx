@@ -6,7 +6,7 @@ export default function TaskContent({ tasks }) {
   return (
     <div className="flex flex-col gap-y-3">
       {tasks.map((t) => (
-        <TaskRow task={t} />
+        <TaskRow key ={t.id} task={t} />
       ))}
     </div>
   );

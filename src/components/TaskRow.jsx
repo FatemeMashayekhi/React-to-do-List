@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
+import { TaskManeger } from "../taskContext";
 export default function TaskRow({ task }) {
-  const { name } = task;
-  // const deleteTask = (id) => {
-  //   setProducts(products.filter((p) => p.id !== id));
-  // };
+  const { name, id } = task;
+  const {deleteTask} =TaskManeger()
   return (
     <div>
       <div className="flex gap-x-2 items-center">
@@ -14,7 +13,7 @@ export default function TaskRow({ task }) {
           <Icon icon="mdi:tick" className="text-white text-2xl" />
         </button>
 
-        <button className="bg-[#fa7a46] p-1">
+        <button className="bg-[#fa7a46] p-1" onClick={() =>deleteTask(id)}>
           <Icon icon="ion:trash" className="text-white text-2xl" />
         </button>
       </div>
