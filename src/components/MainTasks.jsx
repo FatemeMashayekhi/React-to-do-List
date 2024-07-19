@@ -2,10 +2,10 @@
 
 import Header from "./Header/Header";
 import TaskContent from "./TaskContent";
-import { TaskManeger } from "../taskContext";
+import { TaskManager } from "../taskContext";
 
 export default function MainTasks() {
-  const { tasks, filterValue } = TaskManeger();
+  const { tasks, filterValue } = TaskManager();
   return (
     <div className="bg-[#1b99e5] flex flex-col justify-center items-center gap-y-4 p-3">
       <p className="font-semibold text-2xl text-white">Tasks</p>

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
-import { TaskManeger } from "../../taskContext";
+import { TaskManager } from "../../taskContext";
 import { useState } from "react";
 export default function AddInput() {
   const [inputValue, setInputValue] = useState("");
-  const { createNew } = TaskManeger();
+  const { createNew } = TaskManager();
   return (
     <>
       <div className="w-52 relative">

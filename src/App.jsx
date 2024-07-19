@@ -1,13 +1,10 @@
-import { useContext } from "react";
-import data from "../data.js";
 import "./App.css";
 import MainTasks from "./components/MainTasks";
-import TaskContent from "./components/TaskContent.jsx";
-import { TaskContext, TaskManeger } from "./taskContext.jsx";
 
+import { TaskManager } from "./taskContext.jsx";
 
 function App() {
-  const {tasks} =TaskManeger()
+  const { tasks } = TaskManager();
   console.log(tasks);
   return (
     <>
