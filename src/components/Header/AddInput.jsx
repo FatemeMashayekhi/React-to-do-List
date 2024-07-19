@@ -15,7 +15,7 @@ export default function AddInput({ setTasks }) {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button
-          onClick={() =>
+          onClick={() => {
             setTasks((prevState) => {
               return [
                 ...prevState,
@@ -25,8 +25,9 @@ export default function AddInput({ setTasks }) {
                   id: +new Date(),
                 },
               ];
-            })
-          }
+            });
+            setInputValue("");
+          }}
         >
           <Icon
             icon="ph:plus-fill"
