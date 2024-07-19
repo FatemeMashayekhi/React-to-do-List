@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Icon } from "@iconify/react";
-import { useContext, useState } from "react";
 import { TaskManeger } from "../../taskContext";
+import { useState } from "react";
 export default function AddInput() {
   const [inputValue, setInputValue] = useState("");
-  const {createNew} =TaskManeger()
+  const { createNew } = TaskManeger();
   return (
     <>
       <div className="w-52 relative">
@@ -19,10 +19,10 @@ export default function AddInput() {
         <button
           onClick={() => {
             createNew({
-                  name: inputValue,
-                  is_Done: false,
-                  id: +new Date(),
-                })
+              name: inputValue,
+              is_Done: false,
+              id: +new Date(),
+            });
             // setTasks((prevState) => {
             //   return [
             //     ...prevState,
